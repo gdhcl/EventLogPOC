@@ -1,0 +1,54 @@
+﻿@model WebApplication1.Entity.EventLogWrapper
+
+<!-- Hidden fields -->
+<input type="hidden" id="hdnSelectedIndex" value="@Model.PageIndex" />
+<input type="hidden" id="hdnSelectedPageSize" value="@Model.PageSize" />
+<!--Hidden end -->
+@if (Model.lstPageNumber != null && Model.lstPageNumber.Any())
+{
+<table>
+    <tr><td></td></tr>
+
+
+    @foreach (var item in Model.lstPageNumber)
+    {
+
+        if ((item - 1) % Model.PageSize == 0)
+        {
+            @:<tr class="tr-records" id="tr-@item">
+                @:<td>
+                                    if (item != 1)
+                                    {
+                                        <a href="javascript:GetPageNumbers(@item-@Model.PageSize)"><<</a>
+                                    }
+        }
+
+        <a id="a-@item" href="javascript:void(0)" onclick="javascript:GetEventLogs('@Model.PageSize','@item')">@item</a>
+
+
+        if ((item) % Model.PageSize == 0 || item == Model.lstPageNumber.Count)
+        {
+            if (item != Model.lstPageNumber.Count)
+            {
+                <a href="javascript:GetPageNumbers(@item+1)">>></a>
+            }
+            @:</td>
+        @:</tr>
+                        }
+
+    }
+</table>
+    <script>
+                $(function () {
+                    try {
+                        $(".tr-records").hide();
+                        var selectedIndex = $("#hdnSelectedIndex").val();
+                        $("#a-" + selectedIndex).parent("td").parent("tr").show();
+                        $("#a-" + selectedIndex).addClass("selected");
+                          
+                    }
+                    catch (ex) { }
+                });
+                
+        </script>
+}

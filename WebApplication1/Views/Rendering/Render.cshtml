@@ -1,0 +1,91 @@
+﻿
+@using Sitecore.Mvc
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Render</title>
+</head>
+<body>
+    <div style="width: 70%;height: 110px;">@Html.Sitecore().Field("Logo")</div>
+    <div class="ex1"><b><u>@Html.Sitecore().Field("SearchLogLabel")</u></b></div>
+    <div>
+        <!-- Hidden fields -->
+        <input type="hidden" id="hdnPageSize" value="10" />
+        <input type="hidden" id="hdnPageIndex" value="1" />
+
+        <input type="hidden" id="hdnFromDate" value="" />
+        <input type="hidden" id="hdnToDate" value="" />
+        <input type="hidden" id="hdnErrorLevels" value="DEBUG" />
+        <input type="hidden" id="hdnLogMessage" value="" />
+        <!-- end -->
+
+        @Html.Sitecore().Field("SearchCriteria")
+        <style>
+            td.ex1 {
+                padding: 10px;
+
+            }
+         </style>
+        <table>
+            <tr>
+               
+                <td class="ex1" >@Html.Sitecore().Field("FromDateLabel")</td>
+                <td class ="ex1"><input readonly id="txtFromDate" name="FromDate" type="text" value="@Html.Sitecore().Field("From Date")" /></td>
+                <td class="ex1"></td>
+                <td class="ex1">@Html.Sitecore().Field("ToDateLabel")</td>
+                <td class="ex1"><input readonly id="txtToDate" name="ToDate" type="text" value="@Html.Sitecore().Field("To Date")" /></td>
+
+            </tr> 
+            <tr>
+
+                <td class="ex1">@Html.Sitecore().Field("LevelLabel")</td>
+                <td class="ex1">
+                    <select id="drpErrorLevels">
+                        @foreach (var item in WebApplication1.Common_Methods.Common.GetErrorLevels())
+                        {
+                            <option value="@item">@item</option>
+
+                        }
+                    </select>
+                </td> 
+                <td class="ex1"></td>
+                <td class="ex1">@Html.Sitecore().Field("LogMessageLabel")</td>
+                <td class="ex1"><input id="txtLogMessage" name="LogMessage" type="text" value="@Html.Sitecore().Field("MessageContent")" /></td> 
+
+</tr> 
+            <tr>
+         
+            <td><a id="aEventLogs" href="javascript:void(0)">@Html.Sitecore().Field("ButtonLabel")</a></td>
+            
+            </tr> 
+            <tr>
+                <td></td>
+            </tr> 
+        </table>
+       
+    </div>
+
+    <div id="dvEventLogList">  </div>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="~/Scripts/Custom/EventLog.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#txtFromDate,#txtToDate").datepicker().datepicker("setDate", new Date());
+            $("#aEventLogs").click(function () {
+                UpdateHiddenFields();
+                GetEventLogs($("#hdnPageSize").val(), $("#hdnPageIndex").val());
+            });
+        });
+    </script>
+
+</body>
+</html>
