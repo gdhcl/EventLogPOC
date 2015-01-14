@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{484CBF4E-9FC1-4916-8626-DB251B3A1A7D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CustomLoggingSearch</RootNamespace>
+    <AssemblyName>CustomLoggingSearch</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentArt.Web.UI">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ITHit.WebDAV.Server">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\ITHit.WebDAV.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Desktop\12292014\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Analyzers">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Memory">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Queries.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Regex">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Regex.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.RobotDetection">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Analytics.RobotDetection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Apps.Loader">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Apps.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Automation.MarketingAutomation">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Automation.MarketingAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets.Client">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Buckets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Client">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ContentSearch.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.LuceneProvider">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ItemWebApi">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.ItemWebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.Analytics">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Mvc.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.DeviceSimulator">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Mvc.DeviceSimulator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\sitecore.nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Oracle">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Publishing.WebDeploy">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Publishing.WebDeploy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Server">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Rocks.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Server.Core">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Rocks.Server.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Server.Lucene.3030">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Rocks.Server.Lucene.3030.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Server.Speak">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Rocks.Server.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Server.Validation">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Rocks.Server.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Security.AntiCsrf">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Security.AntiCsrf.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SegmentBuilder">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.SegmentBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Shell.MarketingAutomation">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Shell.MarketingAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Charting">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Client">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Dialogs">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.ItemWebApi">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.ItemWebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Mvc">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Web">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Speak.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Update.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Zip">
+      <HintPath>D:\RASHI\Inetpub\wwwroot\GDInstanceDec\Website - Copy\bin\Sitecore.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\gdinstancedec.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\CSS\Style.css" />
+    <Content Include="Scripts\Custom\EventLog.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Layout\MasterLayout.cshtml" />
+    <Content Include="Views\Rendering\Render.cshtml" />
+    <Content Include="Views\EventLog\GetEventLogs.cshtml" />
+    <Content Include="Views\EventLog\PagingControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common Methods\Common.cs" />
+    <Compile Include="Controllers\EventLogController.cs" />
+    <Compile Include="Entity\EventLog.cs" />
+    <Compile Include="Entity\EventLogWrapper.cs" />
+    <Compile Include="DAL\EventLogConnection.cs" />
+    <Compile Include="Entity\Paging.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57286</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57286/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
