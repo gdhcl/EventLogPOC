@@ -48,7 +48,7 @@
                 <td class="ex1">@Html.Sitecore().Field("LevelLabel")</td>
                 <td class="ex1">
                     <select id="drpErrorLevels">
-                        @foreach (var item in WebApplication1.Common_Methods.Common.GetErrorLevels())
+                        @foreach (var item in CustomLoggingSearch.Common_Methods.Common.GetErrorLevels())
                         {
                             <option value="@item">@item</option>
 

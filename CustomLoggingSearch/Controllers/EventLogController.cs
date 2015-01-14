@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using WebApplication1.Common_Methods;
-using WebApplication1.Entity;
+using CustomLoggingSearch.Common_Methods;
+using CustomLoggingSearch.Entity;
 
-namespace WebApplication1.Controllers
+namespace CustomLoggingSearch.Controllers
 {
     public class EventLogController : Controller
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using WebApplication1.Entity;
+using CustomLoggingSearch.Entity;
 using System.Configuration;
 
-namespace WebApplication1
+namespace CustomLoggingSearch
 {
     public class EventLogConnection
     {
