@@ -57,7 +57,7 @@ BEGIN
 		WHERE 
 			Date BETWEEN @Fromdate AND @ToDate 
 		AND
-			LEVEL = @LEVEL
+			LEVEL = (case @LEVEL when 'ALL' then Level else @LEVEL end)
 		AND 
 		Message like (case @Message when '' then Message
 		else '%' + @Message + '%'  end)

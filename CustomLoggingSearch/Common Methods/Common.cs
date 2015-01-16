@@ -14,6 +14,7 @@ namespace CustomLoggingSearch.Common_Methods
             lstErrorLevels.Add("INFO");
             lstErrorLevels.Add("ERROR");
             lstErrorLevels.Add("WARN");
+            lstErrorLevels.Add("ALL");
             return lstErrorLevels;
         
         }

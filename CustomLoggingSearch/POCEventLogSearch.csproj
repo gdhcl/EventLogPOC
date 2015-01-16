@@ -247,9 +247,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EventLogSearch1.zip" />
     <None Include="Properties\PublishProfiles\gdinstancedec.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\CSS\Style.css" />
+    <Content Include="GetEventLog.sql" />
     <Content Include="Scripts\Custom\EventLog.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
