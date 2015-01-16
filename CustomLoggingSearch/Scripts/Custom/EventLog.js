@@ -1,4 +1,11 @@
 ﻿
+
+function GetRecordsWithDifferentPageSize()
+{
+    $("#hdnPageSize").val($("#drpNoOfRecords").val());
+    
+}
+
 function GetEventLogs(pageSize, pageIndex) {
     var URL = "/api/sitecore/EventLog/GetEventLogs";
     var finalURL = getEventLogsURL(URL, pageSize, pageIndex);
@@ -10,6 +17,7 @@ function UpdateHiddenFields() {
     $("#hdnToDate").val($("#txtToDate").val());
     $("#hdnErrorLevels").val($("#drpErrorLevels").val());
     $("#hdnLogMessage").val($("#txtLogMessage").val());
+   // $("#hdnNoOfRecords").val($("#drpNoOfRecords").val());
 }
 
 function getEventLogsURL(URL, pageSize, pageIndex) {
@@ -29,12 +37,13 @@ function getEventLogsURL(URL, pageSize, pageIndex) {
 
 function GetPageNumbers(id) {
     $(".tr-records").hide();
-    $("#tr-" + id).show();
+    $("#tr-" + id).show();ALL
 
 }
 
 function ShowDetails(id) {
     var records = $("#trRecords-" + id).text();
-    alert(records);
+    $("#dvShowErrorDetails").text(records);
+
 
 }

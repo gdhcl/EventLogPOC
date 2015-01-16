@@ -10,12 +10,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>GetEventLogs</title>
+    <link href="~/Content/Test/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <link href="~/Content/CSS/Style.css" rel="stylesheet" />
     <div id="contents">
         <span>Search Results:</span>
-        <div style="width:70%;text-align:left">
+        <div style="width:100%;text-align:left">
             @if (Model.lstEventLog != null && Model.lstEventLog.Any())
                 {
                 
@@ -47,6 +48,7 @@
                 <span>No record found</span>
             }
         </div>
+        <div id="dvShowErrorDetails" style="display:none"></div>
         <div id="dvPaging">
             @{Html.RenderAction("PagingControl", "EventLog", new { TotalRecords = Model.TotalRecords,PageSize = Model.PageSize,PageIndex = Model.PageIndex });}
         </div>

@@ -247,6 +247,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Test\css\bootstrap-responsive.css" />
+    <Content Include="Content\Test\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\Test\css\bootstrap.css" />
+    <Content Include="Content\Test\css\bootstrap.min.css" />
+    <Content Include="Content\Test\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Test\img\glyphicons-halflings.png" />
+    <Content Include="Content\Test\js\bootstrap.js" />
+    <Content Include="Content\Test\js\bootstrap.min.js" />
     <Content Include="EventLogSearch1.zip" />
     <None Include="Properties\PublishProfiles\gdinstancedec.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

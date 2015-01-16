@@ -19,6 +19,17 @@ namespace CustomLoggingSearch.Common_Methods
         
         }
 
+        public static List<string> GetNoOfRecords()
+        {
+            List<string> lstNoOfRecords = new List<string>();
+            lstNoOfRecords.Add("10");
+            lstNoOfRecords.Add("20");
+            lstNoOfRecords.Add("50");
+            lstNoOfRecords.Add("100");
+            return lstNoOfRecords;
+
+        }
+
         public static List<int> GetPageNumbers(int totalRecords, int pageSize)
         {
             List<int> lstPageNumbers = new List<int>();
