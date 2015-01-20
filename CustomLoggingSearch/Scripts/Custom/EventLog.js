@@ -26,7 +26,7 @@ function getEventLogsURL(URL, pageSize, pageIndex) {
             toDate = $("#hdnToDate").val(),
             level = $("#hdnErrorLevels").val(),
             message = $("#hdnLogMessage").val(),
-            pageSize = pageSize,
+            pageSize = 10,
             pageIndex = pageIndex;
 
     URL = URL + "?FromDate=" + fromDate + "&ToDate=" + toDate + "&Level=" + level + "&Message=" + message
@@ -37,13 +37,22 @@ function getEventLogsURL(URL, pageSize, pageIndex) {
 
 function GetPageNumbers(id) {
     $(".tr-records").hide();
-    $("#tr-" + id).show();ALL
+    $("#tr-" + id).show();
 
 }
 
 function ShowDetails(id) {
-    var records = $("#trRecords-" + id).text();
+    //var records = $("#trRecords-" + id).text();
+    var records = $("#tdException-" + id).text();
     $("#dvShowErrorDetails").text(records);
-
-
+    $("#dvShowErrorDetails").dialog();
+    $(".selector").dialog({
+        closeOnEscape: true,
+        minHeight: 250,
+        minWidth: 350,
+        modal: true,
+        resizable: false,
+        draggable: false
+    });
+    
 }

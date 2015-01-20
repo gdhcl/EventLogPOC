@@ -10,11 +10,11 @@ namespace CustomLoggingSearch.Common_Methods
         public static List<string> GetErrorLevels()
         {
             List<string> lstErrorLevels = new List<string>();
+            lstErrorLevels.Add("ALL");
             lstErrorLevels.Add("DEBUG");
             lstErrorLevels.Add("INFO");
             lstErrorLevels.Add("ERROR");
             lstErrorLevels.Add("WARN");
-            lstErrorLevels.Add("ALL");
             return lstErrorLevels;
         
         }
@@ -36,7 +36,7 @@ namespace CustomLoggingSearch.Common_Methods
             int totalPages = 0;
             if (totalRecords > 0)
             {
-                totalPages = Convert.ToInt32(totalRecords / pageSize);
+                totalPages = Convert.ToInt32(totalRecords / 10);
                 for (int i = 1; i <= totalPages; i++)
                 {
                     lstPageNumbers.Add(i);

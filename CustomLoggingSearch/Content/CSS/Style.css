@@ -1,13 +1,13 @@
 ﻿/*#tblRecords th, #tblRecords td {
             border: 1px solid black;
         }*/
-#tblRecords th {
+/*#tblRecords th {
             border: 2px solid black;
             bgcolor:"#FF0000";
         }
 #tblRecords td {
             border: 1px solid black;
-        }
+        }*/
         /* pagination */
         #contents #dvPaging {
             text-align: center;
