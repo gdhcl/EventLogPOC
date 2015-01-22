@@ -40,7 +40,16 @@
                             <td style="width: 10%;">@item.Level</td>
                             <td style="width: 30%;"><span style="word-wrap:break-word;width:100px">@item.Message</span></td>
                             <td id="tdException-@item.RowNumber" style="display:none">@item.Exceptions</td>
-                            <td><a href="javascript:ShowDetails('@item.RowNumber')"> Exception </a></td>
+                           @if (string.IsNullOrWhiteSpace(item.Exceptions))
+                           { 
+                           <td></td>
+                           }
+                           else { 
+                           <td><a href="javascript:ShowDetails('@item.RowNumber')"> Details </a></td>
+                           }
+                           
+                            
+                           
                         </tr>
                     }
                     </table>
@@ -53,7 +62,7 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-        <div id="dvShowErrorDetails" title="Exception Details">  </div>
+        <div id="dvShowErrorDetails" style="width:auto!important;z-index:99999">  </div>
         <div id="dvPaging">
             @{Html.RenderAction("PagingControl", "EventLog", new { TotalRecords = Model.TotalRecords,PageSize = Model.PageSize,PageIndex = Model.PageIndex });}
         </div>

@@ -36,7 +36,8 @@ namespace CustomLoggingSearch.Common_Methods
             int totalPages = 0;
             if (totalRecords > 0)
             {
-                totalPages = Convert.ToInt32(totalRecords / 10);
+                //todo: In case of 12 records this code is returning 1 instead of 2[total records 12 pagesize 10]
+                totalPages = Convert.ToInt32(totalRecords / pageSize);
                 for (int i = 1; i <= totalPages; i++)
                 {
                     lstPageNumbers.Add(i);
